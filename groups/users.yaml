@@ -1,0 +1,140 @@
+---
+# groups/users.yaml (from the complete starter) -- the roster: the frozen
+# fixture's nineteen synthetic personas (avery.alpha ... sawyer), every
+# identifying value an ENC[age:...] marker opened by the TEST identity, plus
+# one MANAGED user showing every profile field. Reference:
+# CONFIGURATION.md (the system repository's docs/CONFIGURATION.md) section 11.6 (users) and 13 (encrypted values).
+# A user's name is the bare OPA username that group members/admins lists
+# use; the address is explicit, or derived from the user builder's
+# template; first_name/last_name are required data, never derived.
+users:
+  # Names are the bare OPA usernames -- exactly what
+  # oktapam_user_group_attachment and group members/admins lists use, matching
+  # the OPA team's user list (verified 2026-08-21). Email is used ONLY to look
+  # the user up in the parent Okta org: explicit `email:` when given, otherwise
+  # derived from the builder's default_user_email_template (name@example.invalid).
+  # first_name/last_name are required data (never derived from 'name').
+  # A `name` is committed in clear by decision (2026-10-14): the identity roots and the
+  # records carry it in clear whatever the roster does. The personal fields may be markers.
+  - name: avery.alpha
+    first_name: Avery
+    last_name: Alpha
+  - name: Blake.Bravo  # exact OPA username casing
+    first_name: Blake
+    last_name: Bravo
+    email: ENC[age:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBFb1FYME9MZGc5b1RBSWMvTzlkKzhTaWNhYVhrMGlXZkU5OFU1Mit6ank4CjZPc2pwQXM5NlhvSDlMQUpCYXp5VGRpVENvcDZaQUVUZGVCSTVlWld3SHcKLS0tIHRXRG1BN3ZFNDltUVdaczU3Q3B5amJMRGg1endNOXFvT3lRZGRoWGVVWTgK45M1NjAO7K3438shGhIPV4n/I0SUOv0kUXL9Z4PiynC50E06Md6vVb8AUiKZ3P25ahwhN7q2yA==]
+  - name: casey.charlie
+    first_name: Casey
+    last_name: Charlie
+  - name: dakota.delta
+    first_name: Dakota
+    last_name: Delta
+  - name: emerson.echo
+    first_name: Emerson
+    last_name: Echo
+  - name: finley.foxtrot
+    first_name: Finley
+    last_name: Foxtrot
+  - name: greer.golf
+    first_name: Greer
+    last_name: Golf
+  - name: harper.hotel
+    first_name: Harper
+    last_name: Hotel
+  - name: i.india
+    first_name: Indigo
+    last_name: India
+    email: ENC[age:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBJNDdhaGpFQ0txKzFBVDBkYWtRY2EzOFBqaVEyR2tNM2N0SUpUNnR0ejNNCldpNWZqMkdUd0RVampFVjRoQnZDU2ptYTlsTXBOQUFxWjRTTUJhY0NNdXMKLS0tIGJkTnZPVitNYXdHbW1GUTJlUkxlMHNFeVRMdjZqRm5sRHh5d3hFN3pHVE0KehG5uULM5ToPqX5M5NPeaqshDg6KRp8iB5QagTZfi/MTEX6U5DEpSPzDYBGDkgJN2cdP]
+  - name: jordan.juliett
+    first_name: Jordan
+    last_name: Juliett
+  - name: kendall.kilo
+    first_name: Kendall
+    last_name: Kilo
+    email: ENC[age:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBBaVBwNzV5dmk1ekUwMTcvR0VEZDhBYTZkNEVaaGRnL2NnaFM1QklKaUdnCkxWaFR0OGV6LzZzRG0vcTVSZkp1TkNpVjZKYlFrTnd6T0NTV0pCaFpCTW8KLS0tIDhOSkNwTjM0azF0d0crd2JVbFd3WUpmNkVBd1hZSUNidDNXcktrRHUwaUkK+jBFOt0RLVYg1YqpqcLRDtmbWEceZaMi09yhYiDEz+NR/MsX2frAtk9IgSkOxPNq2KX0kJJoh98=]
+  # Personas whose addresses are explicit, on example domains; details
+  # in the shape of records read from the OPA user API, read-only.
+  - name: lennox.lima
+    first_name: Lennox
+    last_name: Lima
+  - name: morganm
+    first_name: Morgan
+    last_name: Mike
+    email: ENC[age:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBhd3NjU3pxcDJIK3dsSmtOWVFYTTMxS1pjK0RuMFFRa05uVDJYeHd6WnlVCkJscFlKcEMyQlY1UUxXZE5LaGF5MjZBVy9GZDFOaG4xNUwvU2FzcU9pMFEKLS0tIFJQQ0FwSnVJT3JzWHMzMk1YL3owVGxaa3BiNGlEaFVLZzA1cFliUk9OZUUKbkW+HkrtGp7hPb9amzP7c1xEuuUj3qZgg/l3bduisWTmbwk5gXZINasTmYgSOW9AXN51]
+  - name: noel
+    first_name: Noel
+    last_name: November
+    email: ENC[age:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSArODdIZHF1OGJCalgwVEd4NmE4QUhGZU0zdUtEVFpBcjJXOTNNUys5VTBNClNhNUtqRWVFZHZnZlNpWTVTWHoxS3p3Tm55UVdvQWp2aUdlSWswQlV4ekkKLS0tIHpNZkszUlNJSzhPZUtyOFA4SmxGbWlncmFTSEpac05EM0o3U25qcFEwM28KIhx4osR/36nN2XeEZSX11hKC0dfp2R+VX2sjuVa2xWJjRsWZdhbkp3o1ct671h6+]
+  - name: oakley
+    first_name: Oakley
+    last_name: Oscar
+    email: ENC[age:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBGTktqVnVsaHI4bG84SGhZS1RDMDFya20raDVqSDhjMGdQU0NCL245bWhRCi81aUhhdUEvWkRyTnpDTFFIV2VydXVBM21VRnk0ZGZnd1NBbXpoSS9OSUUKLS0tIGN3cjdqZmRpc2FSZ2RYMmJmdTNLTzNJdEtxd3M4enViMWl0bm5lRnRUZmcKt9lMEBu9GpPu8FCCUJxxtnrFvgrUUAahOHEnpPLh5eheec33te6lX9H68vFQJ1h5LSE=]
+  # Added 2026-09-05 (tcmet reconciliation): live OPA tcmet membership;
+  # details read from the OPA user records
+  # (GET /v1/teams/{team}/users/{user}, read-only).
+  - name: parker
+    first_name: Parker
+    last_name: Papa
+    email: ENC[age:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBoUHpkOXkvRkN4YTVWVVhkWWFiZm4wckVhek5lZEFNUG0reHhuWFE1clFRCmVFL2VxTzk5UVdscGIzM3RvZUJlMm90OG5kLzFRN3U1MFZ6aE9SK2dJSU0KLS0tIFZ3bEd4ay9LcG5COUVmckxkblQwcmtqUVhmbkprT3ljTmEvMWN0OG5aMGsKYdqvpjKQEkMUBIKigLZzMk8IQPavalPKFuG9fYD8DbmuoBJpdd8hXU4kyTNhB4sa1nU=]
+  - name: quinn_quebec
+    first_name: Quinn
+    last_name: Quebec
+    email: ENC[age:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSAxOU5uczRTNnBEQ2RvMVVCTHlpMVh6aVZ2VWRjV0YzQkRRVW9tT0NBMXpvCkpHbGVYR3BMMHlwWWdnZ2xsaWtGZXRCSGpKbXhhM2lGZ3YwUzN0Wjd4eGcKLS0tIEhYK2xhSU9uSXd2QVYrQ0xhUkw0aUFsSlE0Qy9nYno3TXFMcWV4bkJrdjQKVJJflDrOfNGNDGr5fXejlezsEe9me1a3byRqe6SMsWXTtrt7eVlZO9hDh4yWccysJ17N7wsJ/5g=]
+  - name: rileyr
+    first_name: Riley
+    last_name: Romeo
+    email: ENC[age:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBpWWViNEh1RVFhMlR0NDJBRWNyNWowZGpQcnhWQ01Ob2p6bmNQdEFIaENvCnVJSFFzaHNhTUx0SmJSQzhLZDRtUkp2cERFVjdXWTcwWW1zRWtBNnlYaGMKLS0tIGtxa0R1akF6aHdaSnRHcGE3dFlNSGp5dE1vcHZSR3dhWUY5OFUwZ2ZFWVEKbXTcDwumfDDJ/Ie2uE5jsCKDt3kTwKcWadxUnBFhxxctq9DbDpW+8Z7dHjyoUn8nq3M=]
+  - name: sawyer
+    first_name: Sawyer
+    last_name: Sierra
+    email: ENC[age:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBuRXVCTEpqVGRZU3NrWXd4UjBFMVJYNFViREtGeGp5a2IxenZGY0I4emg0CmxrRU5BM3ZxZElqdzF3TzIwK1k1eCtEMEkzdHVjV0dHd2htOFoyQWE4WEUKLS0tIHZqVjJnRFRSU3hQeXVjM0VRZC9LRXY4WjUrUVQ1anlxaXkzMUpwU2ZNQ2cK+dsRK5Rw/gY6a0LKodqmLIJIWRdP1/1+tJuYnjsJsMQTdYxNu181LR+AqPKuBiHZEnM=]
+  # ---- a MANAGED user (11.6): the okta-tf-managed builder emits an okta_user
+  # resource for it. Its builder has email_as_username: true, so name and
+  # email are the same address. In clear, to show every field; encrypt any
+  # of them the same way as the entries above.
+  - name: tatum.tango@example.invalid
+    type: okta-tf-managed          # the user builder (default: the default user builder)
+    email: tatum.tango@example.invalid
+    first_name: Tatum
+    middle_name: T
+    last_name: Tango
+    description: "Managed persona for the complete example"   # default: the builder's description template
+    is_enabled: true               # false emits status SUSPENDED
+    managed: true                  # null: the builder's default (okta-tf: managed; okta-tf-ro refuses true)
+    is_service_account: false      # accepted; not emitted
+    public_keys: []                # accepted; not emitted
+    attributes:                    # provider attributes OPA accepts: planned and probed, never written
+      unix_uid: 5001
+      unix_gid: 5001
+      unix_user_name: tatum.tango
+      windows_user_name: tatum.tango
+    # okta_user profile arguments, emitted when set
+    title: "Modeler"
+    display_name: "Tatum Tango"
+    nick_name: "Tatum"
+    profile_url: "https://example.invalid/~tatum.tango"
+    second_email: "tatum.tango.alt@example.invalid"
+    mobile_phone: "+1-555-0100"
+    primary_phone: "+1-555-0101"
+    honorific_prefix: "Dr."
+    honorific_suffix: "PhD"
+    street_address: "1 Example Way"
+    city: "Exampleville"
+    state: "MD"
+    zip_code: "20000"
+    country_code: "US"
+    postal_address: "1 Example Way, Exampleville MD 20000"
+    preferred_language: "en"
+    locale: "en_US"
+    timezone: "America/New_York"
+    user_type: "employee"
+    employee_number: "0001"
+    cost_center: "CC-0001"
+    organization: "Example Org"
+    division: "Modeling"
+    department: "Coastal"
+    manager_id: "0000"
+    manager: "Avery Alpha"
+    tags:
+      persona: "true"
+    config: {}
