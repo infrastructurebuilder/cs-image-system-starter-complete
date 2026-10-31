@@ -9,7 +9,7 @@ key, a new name is added for the invocation, and `undeclare: true` removes
 the tree's declaration for the invocation. The generated runner scripts
 carry the overlays they were generated under and `apply-check` re-reads
 them at execution. `--undeclare <kind>:<name>` is the undeclare form as a
-flag. Reference: [CONFIGURATION.md section 12](https://github.com/infrastructurebuilder/cs-image-system-3/blob/v0.1.4/docs/CONFIGURATION.md#12-overlays).
+flag. Reference: [CONFIGURATION.md section 12](https://github.com/infrastructurebuilder/cs-image-system-3/blob/v0.1.5/docs/CONFIGURATION.md#12-overlays).
 
 - `apply-identity-and-storage.yaml` -- `config:` only: let two lifecycles apply for one run.
 - `gce-cycle-launch.yaml` -- a NEW transient instance plus the GCE instance root allowed to apply.
